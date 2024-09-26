@@ -52,39 +52,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Address"
-            android:inputType="text"/>
+            android:hint="Search Addresses"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+             android:focusable="false"/>
 
-        <EditText
-            android:id="@+id/etCity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="City"
-            android:inputType="text"/>
+<!--        <EditText-->
+<!--            android:id="@+id/etCity"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:hint="City"-->
+<!--            android:inputType="text"/>-->
 
-        <EditText
-            android:id="@+id/etProvince"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="Province"
-            android:inputType="text"/>
+<!--        <EditText-->
+<!--            android:id="@+id/etProvince"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:hint="Province"-->
+<!--            android:inputType="text"/>-->
 
-        <EditText
-            android:id="@+id/etPostalCode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Postal Code"
-            android:inputType="text"/>
+<!--        <EditText-->
+<!--            android:id="@+id/etPostalCode"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Postal Code"-->
+<!--            android:inputType="text"/>-->
 
-        <Spinner
-            android:id="@+id/spCountry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:entries="@array/id_countries"
-            android:text="Country"/>
+<!--        <Spinner-->
+<!--            android:id="@+id/spCountry"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:entries="@array/id_countries"-->
+<!--            android:text="Country"/>-->
 
         <EditText
             android:id="@+id/etSqFoot"
@@ -97,8 +99,8 @@
             android:id="@+id/etAddressNotes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Address Notes"
-            android:inputType="text"/>
+            android:hint="Address Notes (Optional)"
+            android:inputType="text" />
 
         <LinearLayout
             android:layout_width="match_parent"

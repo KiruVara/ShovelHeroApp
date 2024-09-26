@@ -2,7 +2,7 @@ package com.example.shovelheroapp.Models.Enums;
 
 public enum Status {
 
-    Open, Pending, Accepted, Enroute, InProgress, Issue, Completed, CancelledByCustomer, CancelledByShoveller, Closed, OpenCustom;
+    Open, PendingGuardianApproval, Accepted, Enroute, InProgress, Issue, Completed, CancelledByCustomer, CancelledByShoveller, Closed, OpenCustom;
 
     //*********************************************
     //*****WO STATUS CHEAT SHEET FOR DEVELOPERS****

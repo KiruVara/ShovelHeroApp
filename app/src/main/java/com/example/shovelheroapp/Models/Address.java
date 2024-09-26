@@ -17,21 +17,15 @@ public class Address {
     public Address() {}
 
     //CONSTRUCTOR
-
-
-    public Address(String addressId, String address, String city, String province, String postalCode, String country, String addressNotes, int drivewaySquareFootage, String accessible, String shovelAvailable) {
+    public Address(String addressId, String address, String city, String province, String postalCode, String country, int drivewaySquareFootage) {
         this.addressId = addressId;
         this.address = address;
         this.city = city;
         this.province = province;
         this.postalCode = postalCode;
         this.country = country;
-        this.addressNotes = addressNotes;
         this.drivewaySquareFootage = drivewaySquareFootage;
-        this.accessible = accessible;
-        this.shovelAvailable = shovelAvailable;
     }
-
 
     //CONSTRUCTORS
     public String getAddressId() {
@@ -112,5 +106,10 @@ public class Address {
 
     public void setShovelAvailable(String shovelAvailable) {
         this.shovelAvailable = shovelAvailable;
+    }
+
+    @Override
+    public String toString(){
+        return address + ", " + city + ", " + province;
     }
 }

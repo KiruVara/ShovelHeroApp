@@ -3,11 +3,8 @@ package com.example.shovelheroapp.Models;
 import android.media.Image;
 import android.widget.CalendarView;
 
-import android.widget.TextClock;
-
-
-
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class WorkOrder {
@@ -16,10 +13,11 @@ public class WorkOrder {
     private String status;
     private int squareFootage;
     private double price;
-    private Date requestDate;
+    private String requestDate;
     private CalendarView requestDatePicker;
-    private TextClock requestTimePicker;
-    private String requestedDateTime;
+    //private TextClock requestTimePicker;
+    private String requestedTime;
+    private String requestedDate;
     private boolean isDrivewayChecked;
     private boolean isWalkwayChecked;
     private boolean isSidewalkChecked;
@@ -29,9 +27,11 @@ public class WorkOrder {
     private Image completedImage;
     private Image issueImage;
 
-
     private String customerId; //to be foreign key
     private String customerAddressId; //to be foreign key
+    private String shovellerId;
+    private String guardianId;
+    private HashMap<String, Transaction> transaction;
 
 
     //private Invoice invoiceId; --> is this how we do it? with foreign key?
@@ -40,18 +40,21 @@ public class WorkOrder {
 
 
     public WorkOrder(){
+        itemsRequested = new ArrayList<>();
+        transaction = new HashMap<>();
     }
 
 
     //CONSTRUCTOR
-    public WorkOrder(String workOrderId, Date requestDate, String status, int squareFootage, List<String> itemsRequested, String customerId, String customerAddressId) {
+    public WorkOrder(String workOrderId, String requestDate, String status, int squareFootage, String customerId, String customerAddressId) {
         this.workOrderId = workOrderId;
         this.requestDate = requestDate;
         this.status = status;
         this.squareFootage = squareFootage;
-        this.itemsRequested = itemsRequested;
+        this.itemsRequested = new ArrayList<>();
         this.customerId = customerId;
         this.customerAddressId = customerAddressId;
+        this.transaction = new HashMap<>();
     }
 
 
@@ -89,11 +92,11 @@ public class WorkOrder {
         this.price = price;
     }
 
-    public Date getRequestDate() {
+    public String getRequestDate() {
         return requestDate;
     }
 
-    public void setRequestDate(Date requestDate) {
+    public void setRequestDate(String requestDate) {
         this.requestDate = requestDate;
     }
 
@@ -105,20 +108,20 @@ public class WorkOrder {
         this.requestDatePicker = requestDatePicker;
     }
 
-    public TextClock getRequestTimePicker() {
-        return requestTimePicker;
+    public String getRequestedTime() {
+        return requestedTime;
     }
 
-    public void setRequestTimePicker(TextClock requestTimePicker) {
-        this.requestTimePicker = requestTimePicker;
+    public void setRequestedTime(String requestedDate) {
+        this.requestedTime = requestedTime;
     }
 
-    public String getRequestedDateTime() {
-        return requestedDateTime;
+    public String getRequestedDate() {
+        return requestedDate;
     }
 
-    public void setRequestedDateTime(String requestedDateTime) {
-        this.requestedDateTime = requestedDateTime;
+    public void setRequestedDate(String requestedDate) {
+        this.requestedDate = requestedDate;
     }
 
     public boolean isDrivewayChecked() {
@@ -145,12 +148,16 @@ public class WorkOrder {
         isSidewalkChecked = sidewalkChecked;
     }
 
-    public List<String> getItemsRequested() {
-        return itemsRequested;
-    }
-
     public void setItemsRequested(List<String> itemsRequested) {
         this.itemsRequested = itemsRequested;
+    }
+
+    public HashMap<String, Transaction> getTransaction() {
+        return transaction;
+    }
+
+    public void setTransaction(HashMap<String, Transaction> transaction) {
+        this.transaction = transaction;
     }
 
     public String getSpecialInstructions() {
@@ -199,5 +206,24 @@ public class WorkOrder {
 
     public void setCustomerAddressId(String customerAddressId) {
         this.customerAddressId = customerAddressId;
+    }
+
+    public String getShovellerId() {
+        return shovellerId;
+    }
+
+    public void setShovellerId(String shovellerId) {
+        this.shovellerId = shovellerId;
+    }
+
+    public String getGuardianId() {
+        return guardianId;
+    }
+
+    public void setGuardianId(String guardianId) {
+        this.guardianId = guardianId; }
+        
+    public List<String> getItemsRequested() {
+        return itemsRequested;
     }
 }

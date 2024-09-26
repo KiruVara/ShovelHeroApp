@@ -3,13 +3,13 @@ package com.example.shovelheroapp.Controllers;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.shovelheroapp.Models.User;
 import com.example.shovelheroapp.R;
@@ -19,14 +19,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-//THIS IS A TEST
-
-import android.widget.Spinner;
-
 
 public class MainActivity extends AppCompatActivity {
 
-    private DatabaseReference shovelHeroDatabaseReference;
+    private DatabaseReference userReference;
     private EditText usernameEditText, passwordEditText;
 
     private static final String TAG = "MainActivity";
@@ -37,20 +33,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        shovelHeroDatabaseReference = FirebaseDatabase.getInstance().getReference("users");
+        overridePendingTransition(R.anim.zoom_in, 0);
+
+        userReference = FirebaseDatabase.getInstance().getReference("users");
         System.out.println("Firebase connected");
 
         usernameEditText = findViewById(R.id.etUsername);
         passwordEditText = findViewById(R.id.etPassword);
+
+        Button loginButton = findViewById(R.id.btnLogin);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loginUser(view);
+            }
+        });
     }
 
         public void loginUser(View view) {
             final String username = usernameEditText.getText().toString().trim();
             final String password = passwordEditText.getText().toString().trim();
-            //final String accountType = accountTypeSpinner.getSelectedItem().toString();
 
             //Check if username exists
-            shovelHeroDatabaseReference.orderByChild("username").equalTo(username)
+            userReference.orderByChild("username").equalTo(username)
                     .addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -58,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                                 for (DataSnapshot userSnapShot : snapshot.getChildren()) {
                                     User user = userSnapShot.getValue(User.class);
 
-                                    if (user != null && user.getPassword().equals(password)){
+                                    if (user != null && user.getPassword().equals(password) && !user.getPassword().isEmpty() && !user.getUsername().isEmpty()){
                                         System.out.println("Username and password ok");
 
                                         String accountType = user.getAccountType();
@@ -76,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                                                 String youthID = user.getUserId();
                                                 intentLoginYouth.putExtra("USER_ID", youthID);
                                                 startActivity(intentLoginYouth);
+                                                overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
                                                 finish();
                                                 break;
                                             case "Customer":
@@ -83,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                                                 String customerId = user.getUserId();
                                                 intentLoginCustomer.putExtra("USER_ID", customerId);
                                                 startActivity(intentLoginCustomer);
+                                                overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
                                                 finish();
                                                 break;
                                             case "Guardian":
@@ -90,11 +98,13 @@ public class MainActivity extends AppCompatActivity {
                                                 String guardianId = user.getUserId();
                                                 intentLoginGuardian.putExtra("USER_ID", guardianId);
                                                 startActivity(intentLoginGuardian);
+                                                overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
                                                 finish();
                                                 break;
                                             default:
                                                 Intent intent = new Intent(MainActivity.this, UserRegistrationActivity.class);
                                                 startActivity(intent);
+                                                overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
                                                 break;
                                         }
                                     }
@@ -106,14 +116,13 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "User not found. Please try again or create a new account.", Toast.LENGTH_SHORT).show();
 ;                            }
                         }
-
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
                             //handle error
                         }
                     });
         }
-        //***OK***TESTED AND WORKING
+
         public void createNewUser(View view){
             Intent intent = new Intent(MainActivity.this, UserRegistrationActivity.class);
             startActivity(intent);

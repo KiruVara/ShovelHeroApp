@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controllers.CustomerAcceptedWOActivity"
+    android:background="#BDEDFB">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="128dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.073"
+        app:srcCompat="@drawable/shovel_hero_logo" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="255dp"
+        android:layout_height="32dp"
+        android:text="Accepted Work Order"
+        android:textAlignment="center"
+        android:textColor="#2991C8"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.271" />
+
+    <LinearLayout
+        android:id="@+id/PropertylinearLayout"
+        android:layout_width="411dp"
+        android:layout_height="163dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.436">
+
+        <ImageView
+            android:id="@+id/imgViewProperty"
+            android:layout_width="284dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_launcher_foreground" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Date: "
+                android:textColor="#2991C8"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtLocation"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:text="Location: "
+                android:textColor="#2991C8"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Price: "
+                android:textColor="#2991C8"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtETA"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:text="Estimated Time of Ariival: "
+                android:textColor="#2991C8"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ShovellerLinearLayout"
+        android:layout_width="406dp"
+        android:layout_height="185dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PropertylinearLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/imgViewShoveller"
+            android:layout_width="284dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_launcher_foreground" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Name: "
+                android:textColor="#2991C8"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtGuardian"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:text="Guardian: "
+                android:textColor="#2991C8"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnViewShovellerProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View Profile"
+                android:backgroundTint="#2991C8"
+                android:textSize="16sp"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxGuardianVerification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guardian Verified"
+                android:textColor="#2991C8"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCancelCustomer"
+        android:layout_width="151dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#2991C8"
+        android:text="Cancel Order"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ShovellerLinearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

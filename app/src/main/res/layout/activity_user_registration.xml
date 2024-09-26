@@ -36,15 +36,15 @@
         android:gravity="center_horizontal">
 
         <!-- took out android:focusable="true" - was giving an error-->
-    <ImageView
-        android:id="@+id/profilePicture"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:clickable="true"
-        android:contentDescription="Customer Profile Picture"
-        android:gravity="center"
-        android:onClick="onUploadProfilePictureClick"
-        android:focusable="true" />
+<!--    <ImageView-->
+<!--        android:id="@+id/profilePicture"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="20dp"-->
+<!--        android:clickable="true"-->
+<!--        android:contentDescription="Customer Profile Picture"-->
+<!--        android:gravity="center"-->
+<!--        android:onClick="onUploadProfilePictureClick"-->
+<!--        android:focusable="true" />-->
 
 
     <!--Account Selection-->
@@ -146,26 +146,24 @@
                 android:hint="Birthdate"/>
 
             <ImageButton
-                android:id="@+id/imgProfilePicture"
+                android:id="@+id/imgUploadIdCard"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:clickable="true"
-                android:contentDescription="Profile Picture"
+                android:contentDescription="Upload ID card"
                 android:focusable="true"
-                android:onClick="onUploadProfilePicture"
+                android:onClick="onUploadIdCard"
                 android:src="@drawable/add_image"
                 android:scaleType="fitXY"
-                android:background="?android:selectableItemBackground"
-                />
+                android:background="?android:selectableItemBackground" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tvUploadIdCard"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:text="Upload ID card"
-                android:textColor="@color/black"
-                />
+                android:textColor="@color/black" />
         </LinearLayout>
 
     <Button

@@ -1,9 +1,450 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controllers.ViewAnOpenWorkOrderActivity">
+    android:orientation="vertical"
+    tools:context=".Controllers.ViewAnOpenWorkOrderActivity"
+    android:background="#BDEDFB">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:src="@drawable/shovel_hero_logo"
+        android:contentDescription="Shovel Hero Logo"
+        android:layout_marginBottom="6dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="30dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="JobStatus"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/lblShovellingJob"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_marginLeft="6dp"
+            android:text="Shovelling Job"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
+
+            <!--TO add: android:src=""-->
+            <ImageButton
+                android:id="@+id/imgProperty"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:contentDescription="Property Picture"
+                android:focusable="true"
+                android:src="@drawable/shovel_hero_logo"
+                android:scaleType="fitXY"
+                android:background="@color/white"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="30dp">
+
+                <TextView
+                    android:id="@+id/lblAddress"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="Location:"
+                    android:textColor="#2991C8"/>
+
+                <TextView
+                    android:id="@+id/tvAddress"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="#2991C8"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/lblItemsRequested"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:text="Shovel Area: "
+                    android:textColor="#2991C8"/>
+
+                <TextView
+                    android:id="@+id/tvItemsRequested"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:gravity="left"
+                    android:textColor="#2991C8"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/lblSpecialNotes"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:text="Important Notes: "
+                    android:textColor="#2991C8"/>
+
+                <TextView
+                    android:id="@+id/tvSpecialNotes"
+                    android:layout_width="130dp"
+                    android:layout_height="60dp"
+                    android:gravity="left"
+                    android:textColor="#2991C8"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btnDirections"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="Get Directions"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:padding="8dp"
+        android:background="@drawable/rv_item_background"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/lblCustomerUsername"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="Customer: "
+            android:textColor="#2991C8"/>
+
+        <TextView
+            android:id="@+id/tvCustomerUsername"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#2991C8"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="8dp"
+        android:background="@drawable/rv_item_background"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/lblShovellerUsername"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="Shoveller: "
+            android:textColor="#2991C8"/>
+
+        <TextView
+            android:id="@+id/tvShovellerUsername"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#2991C8"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="35dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/lblRequestDateTime"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Requested:"
+            android:textColor="#2991C8"/>
+
+        <TextView
+            android:id="@+id/tvRequestDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#2991C8"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/lblSpecialTime"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Requested Arrival:"
+            android:textColor="#2991C8"/>
+
+        <TextView
+            android:id="@+id/tvRequestedDate"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#2991C8"/>
+
+        <TextView
+            android:id="@+id/tvRequestedTime"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#2991C8"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/lblSquareFootage"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Job Size:"
+            android:textColor="#2991C8"/>
+
+
+        <TextView
+            android:id="@+id/tvSquareFootage"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#2991C8"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="40dp"
+        android:layout_weight="1">
+
+
+        <!--For Shovellers-->
+        <!--Button
+            android:id="@+id/btnTakeIt"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Take It!"
+            android:layout_marginLeft="5dp"/>
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginLeft="5dp"/>
+
+        <Button
+            android:id="@+id/btnEnroute"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="On My Way"
+            android:layout_marginLeft="5dp"/>
+
+        <Button
+            android:id="@+id/btnLate"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="I'll be Late"
+            android:layout_marginLeft="5dp"/>
+
+        <Button
+            android:id="@+id/btnArrived"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Arrived"
+            android:layout_marginLeft="5dp"/>
+
+        <Button
+            android:id="@+id/btnCompleted"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Finished"
+            android:layout_marginLeft="5dp"/>
+
+        <Button
+            android:id="@+id/btnIssueReport"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Report an Issue"
+            android:layout_marginLeft="5dp"/-->
+
+
+        <!--For GUARDIANS-->
+        <!--Button
+            android:id="@+id/btnGuardianApprove"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Approve"
+            android:layout_marginLeft="5dp"/>
+
+        <Button
+            android:id="@+id/btnGuardianReject"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Reject"
+            android:layout_marginLeft="5dp"/>
+
+        <Button
+            android:id="@+id/btnGuardianCancel"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginLeft="5dp"/>
+
+        <Button
+            android:id="@+id/btnGuardianEnroute"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="On the Way"
+            android:layout_marginLeft="5dp"/>
+
+        <Button
+            android:id="@+id/btnGuardianArrived"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Arrived"
+            android:layout_marginLeft="5dp"/>
+
+        <Button
+            android:id="@+id/btnGuardianCompleted"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Finished"
+            android:layout_marginLeft="5dp"/>
+
+        <Button
+            android:id="@+id/btnGuardianIssueReport"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Report an Issue"
+            android:layout_marginLeft="5dp"/-->
+
+
+        <!--For CUSTOMERS-->
+        <!--Button
+            android:id="@+id/btnCustomerCancel"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginLeft="5dp"/-->
+
+    </LinearLayout>
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationViewCustomer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/navmenu"/>
+
+</LinearLayout>

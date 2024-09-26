@@ -5,6 +5,24 @@
         android:title="Orders"
         android:icon="@drawable/baseline_list_alt_24">
     </item>
+
+    <!--**TODO: FLEXIBLE NAV BARS-->
+    <!--item
+        android:id="@+id/menu_shovellerprofile"
+        android:title="Profile"
+        android:icon="@drawable/baseline_list_alt_24">
+    </item>
+    <item
+        android:id="@+id/menu_guardianprofile"
+        android:title="Profile"
+        android:icon="@drawable/baseline_list_alt_24">
+    </item>
+    <item
+        android:id="@+id/menu_customerprofile"
+        android:title="Profile"
+        android:icon="@drawable/baseline_list_alt_24">
+    </item-->
+
     <item
         android:id="@+id/menu_orderhistory"
         android:title="History"
@@ -15,4 +33,5 @@
         android:title="Logout"
         android:icon="@drawable/baseline_logout_24">
     </item>
+
 </menu>

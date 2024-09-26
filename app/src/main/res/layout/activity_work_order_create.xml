@@ -23,86 +23,100 @@
             android:id="@+id/lblCreateWO"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create a Work Order"
+            android:text="Request Shovelling"
             android:gravity="center"
             android:textSize="22sp"
             android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:minHeight="30dp" />
+
+        <TextView
+            android:id="@+id/tvSquareFootage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:minHeight="30dp" />
+
+        <Button
+            android:id="@+id/btnScheduleNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Schedule Now"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/tvRequestDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:minHeight="30dp"
+            android:layout_marginBottom="3dp"/>
+
+        <View
+            android:id="@+id/vwAddressSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black"
             android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/lblSpecialRequests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Special Requests"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/etCustomDate"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp"
-            android:text="Select Specific Date Request" />
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="1dp"
+            android:hint="Specific Date" />
 
-        <TextClock
-            android:id="@+id/tpCustomTime"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp"
-            android:text="Select Specific Time Request" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Address"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:layout_marginBottom="18dp"/>
-
-        <Spinner
-            android:id="@+id/spinnerAddress"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:layout_marginBottom="18dp"/>
 
         <EditText
-            android:id="@+id/etSquareFootage"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:hint="Square Footage"
-            android:minHeight="48dp"
-            android:inputType="number"/>
-    </LinearLayout>
+            android:id="@+id/etCustomTime"
+            android:layout_width="85dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="1dp"
+            android:hint="Time" />
 
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/etCustomShoveller"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Request by Username"
+            android:hint="Request Shoveller By Username"
             android:minHeight="48dp"
-            android:inputType="text"/>
-
-        <Button
-            android:id="@+id/btnValidateShoveller"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:text="Validate Username" />
+            android:inputType="text"
+            android:outlineAmbientShadowColor="@color/black"/>
 
     </LinearLayout>
 
@@ -135,23 +149,25 @@
 
 
         <EditText
-            android:id="@+id/etSpecialInstructions"
+            android:id="@+id/etAddressNotes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Special Instructions (Optional)"
             android:inputType="textMultiLine"
             android:gravity="top|start"
             android:minLines="3"
-            android:maxLines="6"
+            android:maxLines="5"
             android:scrollbars="vertical"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edit_text_outline"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tvWorkOrderPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Work Order Price: "
-            android:textSize="20sp"/>
+            android:textSize="18sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -161,7 +177,7 @@
             android:layout_marginBottom="16dp">
 
             <Button
-                android:id="@+id/btnCreateOrder"
+                android:id="@+id/btnOrderShovelling"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -176,5 +192,7 @@
                 android:layout_weight="1"
                 android:text="Cancel"/>
         </LinearLayout>
+
     </LinearLayout>
+
 </ScrollView>

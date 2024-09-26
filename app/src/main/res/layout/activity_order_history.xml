@@ -4,6 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controllers.OrderHistoryActivity">
+    tools:context=".Controllers.OrderHistoryActivity"
+    android:background="#BDEDFB">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="128dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.073"
+        app:srcCompat="@drawable/shovel_hero_logo" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="216dp"
+        android:layout_height="35dp"
+        android:text="Order History "
+        android:textAlignment="center"
+        android:textColor="#2991C8"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.271" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewOrderHistory"
+        android:layout_width="406dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="88dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
